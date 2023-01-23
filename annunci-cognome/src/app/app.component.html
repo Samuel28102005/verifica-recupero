@@ -1,0 +1,7 @@
+<input type = "text" #nome> <br>
+<input type = "text" #telefono> <br>
+<input type = "text" #messaggio> <br>
+
+<button (click) = "invia(nome,telefono,messaggio)">invia</button>
+
+<app-annunci *ngFor = "let s of annunci_vect" [x] = "s"></app-annunci>
