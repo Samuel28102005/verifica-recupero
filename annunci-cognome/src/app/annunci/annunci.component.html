@@ -1,4 +1,16 @@
 <p>{{x.nome}} {{x.telefono}} {{x.messaggio}}</p>
 
 <button (click) = "espandi()">espandi</button>
-<button (click) = "rispondi()">rispondi</button>
+<label>rispondi:</label> <input type="text" #rispondi />
+<br />
+<button (click)="rispondo(rispondi)">rispondi</button>
+<br />
+
+<app-commenti *ngFor="let rispondi of x.rispondi" [commento]="rispondi"></app-commenti>
+
+<div *ngIf="likeview">
+    <button (click)="addLike()">LIKE al post</button>
+    {{ x.like }}
+  </div>
+  
+  

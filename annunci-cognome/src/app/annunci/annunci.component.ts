@@ -9,10 +9,21 @@ import { Annunci } from '../module';
 export class AnnunciComponent {
 @Input() x! : Annunci
 n_espandi=false
+likeview : boolean = false;
 espandi():boolean{
   this.n_espandi=true
   return false
 
+
 }
+rispondo(rispondi:HTMLInputElement){
+      this.x.rispondi.push(rispondi.value)
+      this.likeview=true;
+    }
+    addLike() {
+      this.x.like++;
+        }
+
+
 
 }
